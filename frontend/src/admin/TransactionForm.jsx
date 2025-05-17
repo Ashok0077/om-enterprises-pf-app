@@ -69,7 +69,7 @@ const TransactionForm = () => {
         ref: generatedRef,
       };
 
-      await axios.post('http://localhost:5000/api/transactions', payload);
+      await axios.post('https://om-enterprises-pf-app.onrender.com/api/transactions', payload);
 
       setSuccess(true);
       setRefId(generatedRef);

@@ -15,7 +15,7 @@ const TransactionList = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.get(`http://localhost:5000/api/transactions/${pfAccNo}`);
+      const res = await axios.get(`https://om-enterprises-pf-app.onrender.com/api/transactions/${pfAccNo}`);
       setTransactions(res.data.transactions || []);
     } catch (err) {
       console.error('Error fetching transactions:', err);
@@ -35,7 +35,7 @@ const TransactionList = () => {
   const handleDelete = async (ref) => {
     if (!window.confirm('Are you sure you want to delete this transaction?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/transactions/ref/${ref}`);
+      await axios.delete(`https://om-enterprises-pf-app.onrender.com/api/transactions/ref/${ref}`);
       setTransactions((prev) => prev.filter((txn) => txn.ref !== ref));
     } catch (err) {
       console.error('Error deleting transaction:', err);

@@ -18,7 +18,7 @@ const Dashboard = () => {
         if (!pfNumber) throw new Error('No PF number found in token');
 
         // Fetch transactions using PF account number
-        const res = await axios.get(`http://localhost:5000/api/transactions/${pfNumber}`, {
+        const res = await axios.get(`https://om-enterprises-pf-app.onrender.com/api/transactions/${pfNumber}`, {
           headers: { Authorization: `Bearer ${parsedToken.token}` },
         });
 
