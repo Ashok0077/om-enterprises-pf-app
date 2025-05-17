@@ -6,7 +6,7 @@ const PFAccountList = ({ onSelect }) => {
 
   const fetchAccounts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/pf-accounts');
+      const res = await axios.get('https://om-enterprises-pf-app.onrender.com/api/pf-accounts');
       console.log("API Response:", res.data);
       setAccounts(Array.isArray(res.data.accounts) ? res.data.accounts : []);
     } catch (error) {
@@ -17,7 +17,7 @@ const PFAccountList = ({ onSelect }) => {
 
   const deleteAccount = async (pfNumber) => {
     try {
-      await axios.delete(`http://localhost:5000/api/pf-accounts/${pfNumber}`);
+      await axios.delete(`https://om-enterprises-pf-app.onrender.com/api/pf-accounts/${pfNumber}`);
       // After deletion, refetch the list
       fetchAccounts();
     } catch (error) {
